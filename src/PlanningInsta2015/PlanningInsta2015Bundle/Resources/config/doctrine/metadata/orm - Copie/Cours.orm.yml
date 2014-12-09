@@ -1,0 +1,67 @@
+Cours:
+    type: entity
+    table: cours
+    indexes:
+        fk_promo_cours_idx:
+            columns:
+                - promo_id
+        fk_salle_cours_idx:
+            columns:
+                - salle_id
+        fk_prof_cours_idx:
+            columns:
+                - professeur_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        intitule:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+        duree:
+            type: time
+            nullable: true
+            comment: ''
+    manyToOne:
+        promo:
+            targetEntity: Promo
+            cascade: {  }
+            inversedBy: Cours
+            joinColumns:
+                name:promo_id
+                    referencedColumnName: id
+            orphanRemoval: false
+        salle:
+            targetEntity: Salle
+            cascade: {  }
+            inversedBy: Cours
+            joinColumns:
+                name:salle_id
+                    referencedColumnName: id
+            orphanRemoval: false
+        professeur:
+            targetEntity: Professeur
+            cascade: {  }
+            inversedBy: Cours
+            joinColumns:
+                name:professeur_id
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
+    oneToMany:
+        Planning:
+            targetEntity: Cours
+            cascade: {  }
+            mappedBy: Cours
+            joinColumns:
+                name:id
+                    referencedColumnName: cours_id

@@ -1,0 +1,58 @@
+Eleve:
+    type: entity
+    table: eleve
+    indexes:
+        fk_promo_idx:
+            columns:
+                - promo_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        prenom:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        age:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        adresse:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+    manyToOne:
+        promo:
+            targetEntity: Promo
+            cascade: {  }
+            inversedBy: Eleve
+            joinColumns:
+                name:promo_id
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
+    oneToMany:
+        User:
+            targetEntity: Eleve
+            cascade: {  }
+            mappedBy: Eleve
+            joinColumns:
+                name:id
+                    referencedColumnName: eleve_id

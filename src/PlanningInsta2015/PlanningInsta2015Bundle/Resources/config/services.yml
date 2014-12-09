@@ -1,0 +1,4 @@
+services:
+#    planning_insta2015.example:
+#        class: PlanningInsta2015\PlanningInsta2015Bundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,11 @@
+planning_insta2015_homepage:
+    path:     /hello/
+    defaults: { _controller: PlanningInsta2015Bundle:Default:index }
+
+planning_insta2015_id:
+   path:     /id/{id}
+   defaults: { _controller: PlanningInsta2015Bundle:Default:id}
+
+welcome:
+   path:   /welcome/
+   defaults: { _controller: PlanningInsta2015Bundle:Default:welcome}
