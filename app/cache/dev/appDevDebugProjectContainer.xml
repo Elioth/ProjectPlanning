@@ -162,7 +162,7 @@
     <parameter key="validator.expression.class">Symfony\Component\Validator\Constraints\ExpressionValidator</parameter>
     <parameter key="validator.email.class">Symfony\Component\Validator\Constraints\EmailValidator</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
-    <parameter key="validator.api">1</parameter>
+    <parameter key="validator.api">3</parameter>
     <parameter key="fragment.listener.class">Symfony\Component\HttpKernel\EventListener\FragmentListener</parameter>
     <parameter key="form.resolved_type_factory.data_collector_proxy.class">Symfony\Component\Form\Extension\DataCollector\Proxy\ResolvedTypeFactoryDataCollectorProxy</parameter>
     <parameter key="form.type_extension.form.data_collector.class">Symfony\Component\Form\Extension\DataCollector\Type\DataCollectorTypeExtension</parameter>
@@ -1360,7 +1360,7 @@
         <argument>loadValidatorMetadata</argument>
       </call>
       <call method="setApiVersion">
-        <argument>1</argument>
+        <argument>3</argument>
       </call>
       <call method="addObjectInitializers">
         <argument type="collection">
