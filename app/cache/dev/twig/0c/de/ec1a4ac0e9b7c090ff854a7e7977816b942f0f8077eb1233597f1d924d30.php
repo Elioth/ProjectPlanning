@@ -10,17 +10,24 @@ class __TwigTemplate_0cdeec1a4ac0e9b7c090ff854a7e7977816b942f0f8077eb1233597f1d9
         $this->parent = false;
 
         $this->blocks = array(
+            'navbar' => array($this, 'block_navbar'),
         );
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
+        $this->displayBlock('navbar', $context, $blocks);
+    }
+
+    public function block_navbar($context, array $blocks = array())
+    {
+        // line 2
         echo "<div class=\"navbar navbar-default navbar-fixed-top\">
   <div class=\"container\">
     <div class=\"navbar-header\">
       <a class=\"navbar-brand\" href=\"";
-        // line 4
+        // line 5
         echo $this->env->getExtension('routing')->getPath("welcome");
         echo "\">Planning Insta</a>
       <button class=\"navbar-toggle\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar-main\">
@@ -52,7 +59,8 @@ class __TwigTemplate_0cdeec1a4ac0e9b7c090ff854a7e7977816b942f0f8077eb1233597f1d9
 
     </div>
   </div>
-</div>";
+</div>
+";
     }
 
     public function getTemplateName()
@@ -60,13 +68,8 @@ class __TwigTemplate_0cdeec1a4ac0e9b7c090ff854a7e7977816b942f0f8077eb1233597f1d9
         return "PlanningInsta2015Bundle:Menu:guest.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  24 => 4,  19 => 1,);
+        return array (  31 => 5,  26 => 2,  20 => 1,);
     }
 }

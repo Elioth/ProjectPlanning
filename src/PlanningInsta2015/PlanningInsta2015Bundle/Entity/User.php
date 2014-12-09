@@ -2,12 +2,13 @@
 
 namespace PlanningInsta2015\PlanningInsta2015Bundle\Entity;
 
+use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * User
  *
- * @ORM\Table(name="user", indexes={@ORM\Index(name="fk_user_professeur1", columns={"professeur_idprofesseur"}), @ORM\Index(name="fk_user_eleve1", columns={"eleve_ideleve", "eleve_promo_idpromo1"})})
+ * @ORM\Table(name="fos_user", indexes={@ORM\Index(name="fk_user_professeur1", columns={"professeur_idprofesseur"}), @ORM\Index(name="fk_user_eleve1", columns={"eleve_ideleve", "eleve_promo_idpromo1"})})
  * @ORM\Entity
  */
 class User
