@@ -1,0 +1,39 @@
+Site:
+    type: entity
+    table: site
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        adresse:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        telephone:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        description:
+            type: string
+            nullable: true
+            length: 150
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }
+    oneToMany:
+        Salle:
+            targetEntity: Site
+            cascade: {  }
+            mappedBy: Site
+            joinColumns:
+                name:id
+                    referencedColumnName: site_id

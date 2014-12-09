@@ -1,0 +1,45 @@
+PlanningInsta2015\PlanningInsta2015Bundle\Entity\Professeur:
+    type: entity
+    table: professeur
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        prenom:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        age:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        adresse:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }
+    oneToMany:
+        User:
+            targetEntity: Professeur
+            cascade: {  }
+            mappedBy: Professeur
+            joinColumns:
+                id:
+                    referencedColumnName: professeur_id

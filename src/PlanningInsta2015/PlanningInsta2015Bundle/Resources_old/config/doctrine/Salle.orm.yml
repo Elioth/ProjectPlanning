@@ -1,0 +1,46 @@
+PlanningInsta2015\PlanningInsta2015Bundle\Entity\Salle:
+    type: entity
+    table: salle
+    indexes:
+        fk_site_idx:
+            columns:
+                - site_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        place:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        numerosalle:
+            type: string
+            nullable: true
+            length: 5
+            fixed: false
+            comment: ''
+    manyToOne:
+        site:
+            targetEntity: Site
+            cascade: {  }
+            inversedBy: Salle
+            joinColumns:
+                site_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
+    oneToMany:
+        Cours:
+            targetEntity: Salle
+            cascade: {  }
+            mappedBy: Salle
+            joinColumns:
+                id:
+                    referencedColumnName: salle_id

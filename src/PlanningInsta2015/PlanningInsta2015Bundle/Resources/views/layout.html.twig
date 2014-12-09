@@ -1,0 +1,26 @@
+{# app/Resources/views/layout.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Test Application{% endblock %}</title>
+		<link rel="stylesheet" href="{{ asset('bundles/planninginsta2015/css/bootstrap.css') }}" />
+
+    </head>
+    <body>
+	{% include "PlanningInsta2015Bundle:Menu:guest.html.twig" %}
+
+        <div id="sidebar">
+            {% block navbar %}
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+            {% endblock %}
+        </div>
+
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>
