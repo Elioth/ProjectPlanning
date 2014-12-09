@@ -1,0 +1,3 @@
+planning_insta2015:
+    resource: "@PlanningInsta2015Bundle/Resources/config/routing.yml"
+    prefix:   /
